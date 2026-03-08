@@ -47,7 +47,12 @@
 @media (max-width: 768px) {
   .contact-table-wrapper {
     overflow-x: visible;
-    padding: 0 8px;
+    overflow-y: visible;
+    padding: 0 8px 24px;
+  }
+
+  .contact-table {
+    overflow: visible;
   }
 
   .contact-table,
@@ -76,6 +81,7 @@
 
   .contact-table-row:last-child {
     margin-bottom: 0;
+    padding-bottom: 4px;
   }
 
   .contact-table-row td {
