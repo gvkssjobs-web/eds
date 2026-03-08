@@ -42,3 +42,67 @@
 .contact-table a[href^="tel:"]:hover {
   opacity: 0.8;
 }
+
+/* Mobile: card layout */
+@media (max-width: 768px) {
+  .contact-table-wrapper {
+    overflow-x: visible;
+    padding: 0 8px;
+  }
+
+  .contact-table,
+  .contact-table thead,
+  .contact-table tbody,
+  .contact-table tr,
+  .contact-table th,
+  .contact-table td {
+    display: block;
+  }
+
+  .contact-table-header {
+    position: absolute;
+    left: -9999px;
+    visibility: hidden;
+  }
+
+  .contact-table-row {
+    background: #e8e8e8;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 1px solid #ddd;
+  }
+
+  .contact-table-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .contact-table-row td {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+  }
+
+  .contact-table-row td:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .contact-table-row td::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 4px;
+    font-size: 0.85em;
+  }
+
+  .contact-table-row:hover td {
+    background: transparent;
+  }
+
+  .contact-table-row:hover {
+    background: #d0d0d0;
+  }
+}

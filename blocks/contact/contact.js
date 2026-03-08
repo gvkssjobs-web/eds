@@ -13,9 +13,12 @@ export default function decorate(block) {
   const thead = document.createElement('thead');
   const headerRow = document.createElement('tr');
   headerRow.classList.add('contact-table-header');
+  const headerLabels = [];
   [...rows[0].children].forEach((cell) => {
+    const label = getCellText(cell);
+    headerLabels.push(label);
     const th = document.createElement('th');
-    th.textContent = getCellText(cell);
+    th.textContent = label;
     th.scope = 'col';
     headerRow.appendChild(th);
   });
@@ -29,6 +32,7 @@ export default function decorate(block) {
     const cells = [...rows[i].children];
     cells.forEach((cell, index) => {
       const td = document.createElement('td');
+      td.dataset.label = headerLabels[index] || '';
       const content = getCellText(cell);
       if (index === 1 && content) {
         const link = document.createElement('a');
